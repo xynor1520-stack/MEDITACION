@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenFlow - App de Meditación y Yoga</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="nav-menu">
+        <button class="nav-btn" onclick="scrollToSection('header')">Inicio</button>
+        <button class="nav-btn" onclick="scrollToSection('features-section')">Funciones</button>
+        <button class="nav-btn" onclick="scrollToSection('gallery-section')">Galería</button>
+        <button class="nav-btn" onclick="scrollToSection('testimonials-section')">Testimonios</button>
+        <button class="nav-btn" onclick="scrollToSection('plans-section')">Planes</button>
+    </div>
+
+    <a href="https://wa.me/573001234567?text=Hola!%20Me%20interesa%20ZenFlow" target="_blank" class="whatsapp-btn" title="Contáctanos por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+    </a>
+
+    <div id="imageModal" class="image-modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <div class="main-container">
+        <header class="card" id="header">
+            <h1>Encuentra tu paz interior con ZenFlow</h1>
+            <p>La app premium para meditación guiada y yoga. Reduce estrés, mejora el sueño y equilibra tu mente con sesiones personalizadas.</p>
+            <img src="https://assets.visme.co/templates/banners/thumbnails/i_Meditation-App-Mockup_full.jpg" alt="ZenFlow App Mockup" class="hero-mockup">
+            <button id="show-features-btn" class="cta-btn">Descubre las Funciones</button>
+        </header>
+
+        <section id="features-section" class="card hidden">
+            <h2>Características principales</h2>
+            <div class="grid">
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=200&h=200&fit=crop" alt="Sesiones guiadas">
+                    <h3>Sesiones guiadas</h3>
+                    <p>Meditaciones de 5-30 min con voz profesional y música ambiental.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?w=200&h=200&fit=crop" alt="Tracking">
+                    <h3>Tracking de progreso</h3>
+                    <p>Estadísticas detalladas, rachas y recordatorios inteligentes.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=200&h=200&fit=crop" alt="Comunidad">
+                    <h3>Comunidad Zen</h3>
+                    <p>Conecta con usuarios, retos grupales y coaches expertos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery-section" class="card">
+            <h2>Descubre tu experiencia ZenFlow</h2>
+            <div class="image-gallery">
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=800&q=80" alt="Meditación en casa">
+                    <div class="gallery-overlay">
+                        <h4>Meditación en casa</h4>
+                        <p>Encuentra tu espacio perfecto para meditar</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="https://images.unsplash.com/photo-1447452001602-7090c7ab2db3?w=800&q=80" alt="Yoga al aire libre">
+                    <div class="gallery-overlay">
+                        <h4>Yoga al aire libre</h4>
+                        <p>Conecta con la naturaleza</p>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openModal(this)">
+                    <img src="https://images.unsplash.com/photo-1573384666979-2b1e160d2d08?w=800&q=80" alt="Comunidad de bienestar">
+                    <div class="gallery-overlay">
+                        <h4>Comunidad de bienestar</h4>
+                        <p>Comparte tu camino con otros</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials-section" class="card hidden">
+            <h2>Lo que dicen nuestros usuarios</h2>
+            <div class="grid testimonials-grid">
+                <div class="testimonial-card">
+                    <p>Increíble. He reducido mi ansiedad en solo 3 semanas. La app es intuitiva y las sesiones son perfectas.</p>
+                    <strong>— Ana M., 34 años</strong>
+                </div>
+                <div class="testimonial-card">
+                    <p>Como ejecutivo estresado, ZenFlow me ayudó a recuperar el balance. La comunidad es muy motivadora.</p>
+                    <strong>— Carlos R., 42 años</strong>
+                </div>
+                <div class="testimonial-card">
+                    <p>Mejor inversión del año. Duermo mejor y me siento más enfocada en el trabajo.</p>
+                    <strong>— Laura G., 28 años</strong>
+                </div>
+            </div>
+        </section>
+
+        <section id="plans-section" class="card hidden">
+            <h2>Elige tu plan ideal</h2>
+            <div class="grid">
+                <div class="plan-card">
+                    <h3>Plan Básico</h3>
+                    <p class="price">$9.99</p>
+                    <p>Acceso limitado a meditaciones básicas y seguimiento de progreso.</p>
+                    <button onclick="selectPlan('Básico', 9.99)">Seleccionar</button>
+                </div>
+                <div class="plan-card">
+                    <h3>Plan Premium</h3>
+                    <p class="price">$19.99</p>
+                    <p>Acceso completo a todas las meditaciones, yoga y contenido exclusivo.</p>
+                    <button onclick="selectPlan('Premium', 19.99)">Seleccionar</button>
+                </div>
+                <div class="plan-card">
+                    <h3>Plan Familiar</h3>
+                    <p class="price">$29.99</p>
+                    <p>Hasta 5 usuarios, contenido infantil y sesiones personalizadas para toda la familia.</p>
+                    <button onclick="selectPlan('Familiar', 29.99)">Seleccionar</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="billing-card" class="billing-card">
+            <h3>Completa tu compra</h3>
+            <p>Selecciona los servicios adicionales que deseas agregar:</p>
+            
+            <div class="plan-selector">
+                <input type="checkbox" id="addon-coaching" value="15.99" onchange="updateTotal()">
+                <label for="addon-coaching">Sesión de Coaching Personal (1 hora)</label>
+                <span class="plan-price">$15.99</span>
+            </div>
+            
+            <div class="plan-selector">
+                <input type="checkbox" id="addon-workshop" value="25.00" onchange="updateTotal()">
+                <label for="addon-workshop">Workshop de Meditación Avanzada</label>
+                <span class="plan-price">$25.00</span>
+            </div>
+            
+            <div class="plan-selector">
+                <input type="checkbox" id="addon-retreat" value="99.99" onchange="updateTotal()">
+                <label for="addon-retreat">Retiro Virtual de Fin de Semana</label>
+                <span class="plan-price">$99.99</span>
+            </div>
+            
+            <div class="plan-selector">
+                <input type="checkbox" id="addon-nutrition" value="12.50" onchange="updateTotal()">
+                <label for="addon-nutrition">Plan de Nutrición Consciente</label>
+                <span class="plan-price">$12.50</span>
+            </div>
+            
+            <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #f8fdf9 0%, #e8f5e9 100%); border-radius: 15px;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 1.1em;">
+                    <span>Plan Base:</span>
+                    <span id="base-plan-display" style="font-weight: 600; color: #40916c;">-</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 2px solid #ddd;">
+                    <span>Servicios adicionales:</span>
+                    <span id="addons-total" style="font-weight: 600; color: #40916c;">$0.00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 1.3em; font-weight: 700; color: #2d6a4f;">
+                    <span>Total a pagar:</span>
+                    <span id="total-display">$0.00</span>
+                </div>
+            </div>
+            
+            <input type="text" id="name" placeholder="Nombre completo" required>
+            <input type="email" id="email" placeholder="Correo electrónico" required>
+            <select id="country" required>
+                <option value="">Selecciona tu país</option>
+                <option value="Colombia">Colombia</option>
+                <option value="México">México</option>
+                <option value="España">España</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Chile">Chile</option>
+                <option value="Perú">Perú</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <input type="text" id="card" placeholder="Número de tarjeta (simulado)" maxlength="16">
+            <button onclick="processPurchase()">Confirmar Compra</button>
+        </div>
+
+        <div id="receipt-card" class="receipt-card">
+            <div class="receipt-content">
+                <div class="receipt-header">
+                    <div class="receipt-logo">🧘‍♀️ ZenFlow</div>
+                    <h3 style="margin: 0; font-size: 1.5em;">Recibo de Compra</h3>
+                </div>
+                
+                <div class="receipt-details">
+                    <div class="receipt-row">
+                        <span style="font-weight: 600;">Cliente:</span>
+                        <span id="receipt-name"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span style="font-weight: 600;">Email:</span>
+                        <span id="receipt-email"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span style="font-weight: 600;">País:</span>
+                        <span id="receipt-country"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span style="font-weight: 600;">Fecha:</span>
+                        <span id="receipt-date"></span>
+                    </div>
+                    <div class="receipt-row">
+                        <span style="font-weight: 600;">Nº de Orden:</span>
+                        <span id="receipt-order"></span>
+                    </div>
+                </div>
+                
+                <div class="receipt-details" style="margin-top: 20px;">
+                    <h4 style="margin-bottom: 15px; color: #2d6a4f;">Detalles de la compra:</h4>
+                    <div id="receipt-items"></div>
+                </div>
+                
+                <div class="receipt-total">
+                    <div style="display: flex; justify-content: space-between;">
+                        <span>Total pagado:</span>
+                        <span id="receipt-total"></span>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; margin-top: 25px; color: #666;">¡Gracias por tu compra! Te enviamos los detalles por email.</p>
+                <p style="text-align: center; color: #40916c; font-weight: 600;">¡Bienvenido a la comunidad ZenFlow! 🙏</p>
+            </div>
+            
+            <button id="download-btn" onclick="downloadReceipt()">Descargar Recibo PDF</button>
+        </div>
+
+        <footer class="card">
+            <p>© 2024 ZenFlow. Tu viaje hacia el bienestar empieza aquí.</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        let selectedPlan = null;
+        let basePlanPrice = 0;
+
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+
+        document.getElementById('show-features-btn').addEventListener('click', function() {
+            const featuresSection = document.getElementById('features-section');
+            const gallerySection = document.getElementById('gallery-section');
+            const testimonialsSection = document.getElementById('testimonials-section');
+            const plansSection = document.getElementById('plans-section');
+            
+            featuresSection.classList.remove('hidden');
+            featuresSection.classList.add('visible');
+            scrollToSection('features-section');
+            
+            setTimeout(() => {
+                testimonialsSection.classList.remove('hidden');
+                testimonialsSection.classList.add('visible');
+            }, 400);
+            
+            setTimeout(() => {
+                plansSection.classList.remove('hidden');
+                plansSection.classList.add('visible');
+            }, 800);
+        });
+
+        function openModal(element) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const img = element.querySelector('img');
+            
+            modal.classList.add('active');
+            modalImg.src = img.src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function selectPlan(planName, price) {
+            selectedPlan = planName;
+            basePlanPrice = price;
+            
+            const billingCard = document.getElementById('billing-card');
+            const basePlanDisplay = document.getElementById('base-plan-display');
+            
+            basePlanDisplay.textContent = `Plan ${planName} - ${price.toFixed(2)}`;
+            billingCard.style.display = 'block';
+            
+            document.querySelectorAll('.plan-selector input[type="checkbox"]').forEach(cb => {
+                cb.checked = false;
+            });
+            
+            updateTotal();
+            scrollToSection('billing-card');
+        }
+
+        function updateTotal() {
+            let addonsTotal = 0;
+            const checkboxes = document.querySelectorAll('.plan-selector input[type="checkbox"]:checked');
+            
+            checkboxes.forEach(cb => {
+                addonsTotal += parseFloat(cb.value);
+            });
+            
+            const total = basePlanPrice + addonsTotal;
+            
+            document.getElementById('addons-total').textContent = `${addonsTotal.toFixed(2)}`;
+            document.getElementById('total-display').textContent = `${total.toFixed(2)}`;
+        }
+
+        function processPurchase() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const country = document.getElementById('country').value;
+            const card = document.getElementById('card').value.trim();
+
+            if (!name || !email || !country || !card) {
+                alert('Por favor completa todos los campos');
+                return;
+            }
+
+            if (!selectedPlan) {
+                alert('Por favor selecciona un plan primero');
+                return;
+            }
+
+            const orderNumber = 'ZF' + Math.floor(Math.random() * 1000000);
+            const currentDate = new Date().toLocaleDateString('es-ES', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+
+            document.getElementById('receipt-name').textContent = name;
+            document.getElementById('receipt-email').textContent = email;
+            document.getElementById('receipt-country').textContent = country;
+            document.getElementById('receipt-date').textContent = currentDate;
+            document.getElementById('receipt-order').textContent = orderNumber;
+
+            let itemsHTML = `
+                <div class="receipt-row">
+                    <span>Plan ${selectedPlan}</span>
+                    <span style="font-weight: 600;">${basePlanPrice.toFixed(2)}</span>
+                </div>
+            `;
+
+            const addons = [
+                { id: 'addon-coaching', name: 'Sesión de Coaching Personal' },
+                { id: 'addon-workshop', name: 'Workshop de Meditación Avanzada' },
+                { id: 'addon-retreat', name: 'Retiro Virtual de Fin de Semana' },
+                { id: 'addon-nutrition', name: 'Plan de Nutrición Consciente' }
+            ];
+
+            addons.forEach(addon => {
+                const checkbox = document.getElementById(addon.id);
+                if (checkbox.checked) {
+                    itemsHTML += `
+                        <div class="receipt-row">
+                            <span>${addon.name}</span>
+                            <span style="font-weight: 600;">${parseFloat(checkbox.value).toFixed(2)}</span>
+                        </div>
+                    `;
+                }
+            });
+
+            document.getElementById('receipt-items').innerHTML = itemsHTML;
+            document.getElementById('receipt-total').textContent = document.getElementById('total-display').textContent;
+
+            document.getElementById('billing-card').style.display = 'none';
+            document.getElementById('receipt-card').style.display = 'block';
+            scrollToSection('receipt-card');
+        }
+
+        function downloadReceipt() {
+            const receiptCard = document.getElementById('receipt-card');
+            const downloadBtn = document.getElementById('download-btn');
+            const orderNumber = document.getElementById('receipt-order').textContent;
+            
+       
+            if (typeof html2canvas === 'undefined') {
+                alert('Cargando biblioteca de descarga... Por favor intenta nuevamente en un momento.');
+                return;
+            }
+            
+   
+            downloadBtn.style.display = 'none';
+            
+           
+            setTimeout(() => {
+                html2canvas(receiptCard, {
+                    scale: 2,
+                    backgroundColor: '#f8fdf9',
+                    logging: false,
+                    useCORS: true,
+                    allowTaint: true,
+                    windowWidth: receiptCard.scrollWidth,
+                    windowHeight: receiptCard.scrollHeight
+                }).then(canvas => {
+                
+                    downloadBtn.style.display = 'block';
+                    
+                   
+                    if (canvas.toBlob) {
+                        canvas.toBlob(function(blob) {
+                            const url = URL.createObjectURL(blob);
+                            const link = document.createElement('a');
+                            link.download = `ZenFlow_Recibo_${orderNumber}.png`;
+                            link.href = url;
+                            link.style.display = 'none';
+                            document.body.appendChild(link);
+                            link.click();
+                            setTimeout(() => {
+                                document.body.removeChild(link);
+                                URL.revokeObjectURL(url);
+                            }, 100);
+                        }, 'image/png');
+                    } else {
+                        
+                        const link = document.createElement('a');
+                        link.download = `ZenFlow_Recibo_${orderNumber}.png`;
+                        link.href = canvas.toDataURL('image/png');
+                        link.style.display = 'none';
+                        document.body.appendChild(link);
+                        link.click();
+                        setTimeout(() => {
+                            document.body.removeChild(link);
+                        }, 100);
+                    }
+                }).catch(error => {
+                    console.error('Error al generar la imagen:', error);
+                    downloadBtn.style.display = 'block';
+                    alert('Hubo un error al generar el recibo. Error: ' + error.message);
+                });
+            }, 100);
+        }
+
+        document.getElementById('modalImage').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    </script>
+</body>
+</html>
